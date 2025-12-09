@@ -22,7 +22,10 @@ export interface StatusHistory {
 export interface Order {
   id: string;
   customerName: string;
-  cpf: string; // Mudado de password para cpf
+  cpf: string;
   currentStatus: StatusType;
   history: StatusHistory[];
+  glassesModel?: string;
+  lensType?: string;
+  createdAt?: string;
 }
