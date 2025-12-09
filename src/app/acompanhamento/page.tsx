@@ -45,7 +45,7 @@ function TrackingContent() {
   if (!order) {
     return (
       <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center">
-        <Header />
+
         <div className="mt-10 text-center">
             <h2 className="text-xl text-red-600 font-bold">Pedido não encontrado.</h2>
             <Link href="/login" className="text-blue-600 underline mt-4 block">Voltar</Link>
