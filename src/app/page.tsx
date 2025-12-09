@@ -25,7 +25,6 @@ export default function HomePage() {
                 className="object-contain"
              />
           </div>
-          <h1 className="text-3xl font-bold text-white">Óticas Vizz</h1>
           <p className="text-gray-300 mt-2 font-medium">Bem-vindo ao nosso portal</p>
         </div>
 

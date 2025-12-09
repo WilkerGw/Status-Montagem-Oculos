@@ -17,16 +17,9 @@ export default function Header() {
                 priority
              />
           </div>
-          
-          <span className="text-xl md:text-2xl font-bold text-gray-800 tracking-tight leading-tight">
-            Óticas <span className="text-blue-600">Vizz</span>
-          </span>
         </Link>
 
         {/* Texto descritivo */}
-        <div className="hidden sm:block text-sm text-gray-500">
-          Excelência em cada detalhe
-        </div>
       </div>
     </header>
   );
