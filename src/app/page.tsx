@@ -40,7 +40,7 @@ export default function HomePage() {
                         </svg>
                     </div>
                     <div>
-                        <span className="block font-bold text-gray-600">Sou Cliente</span>
+                        <span className="block font-bold text-gray-600"> Cliente</span>
                         <span className="text-sm text-gray-500">Acompanhar meu pedido</span>
                     </div>
                 </div>
@@ -54,7 +54,7 @@ export default function HomePage() {
                         </svg>
                     </div>
                     <div>
-                        <span className="block font-bold text-gray-600">Sou Gerente</span>
+                        <span className="block font-bold text-gray-600"> Gerente</span>
                         <span className="text-sm text-gray-500">Gerenciar pedidos</span>
                     </div>
                 </div>
