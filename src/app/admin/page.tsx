@@ -2,7 +2,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Order, STATUS_LIST, StatusType } from '../../utils/types';
+import { Order, STATUS_LIST, StatusType, getNormalizedStatus } from '../../utils/types';
 import { supabase } from '../../lib/supabase';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -95,8 +95,8 @@ export default function AdminPage() {
         id: item.id,
         customerName: item.customer_name || item.customerName || 'Cliente',
         cpf: item.cpf,
-        currentStatus: (item.current_status || item.currentStatus || STATUS_LIST[0]) as StatusType,
-        history: item.history || [],
+        currentStatus: getNormalizedStatus(item.current_status || item.currentStatus || ''),
+        history: (item.history || []).map((h: any) => ({ ...h, status: getNormalizedStatus(h.status) })),
         glassesModel: item.glasses_model || item.glassesModel,
         lensType: item.lens_type || item.lensType,
         createdAt: item.created_at || item.createdAt
@@ -391,7 +391,7 @@ export default function AdminPage() {
                         <select
                           className={cn(
                             "w-full appearance-none bg-slate-950 border border-slate-700 text-slate-200 text-sm rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all cursor-pointer",
-                            order.currentStatus === 'Óculos entregue' && "border-green-500/50 text-green-400 bg-green-950/20"
+                            order.currentStatus === 'Entregue' && "border-green-500/50 text-green-400 bg-green-950/20"
                           )}
                           value={order.currentStatus}
                           onChange={(e) => updateStatus(order.id, e.target.value as StatusType)}

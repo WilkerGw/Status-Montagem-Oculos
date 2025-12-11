@@ -6,11 +6,11 @@ export const initialOrders: Order[] = [
     id: "1001",
     customerName: "João da Silva",
     cpf: "123.456.789-00", // CPF fictício
-    currentStatus: "Analise dos dados e medidas da lente e armação",
+    currentStatus: "Triagem / Conferência",
     history: [
-      { status: "Coleta da armação solicitada", date: "08/12/2023 10:00" },
-      { status: "Armação coletada na loja e encaminhada para o laboratório", date: "08/12/2023 14:30" },
-      { status: "Analise dos dados e medidas da lente e armação", date: "09/12/2023 09:15" },
+      { status: "Aguardando Coleta", date: "08/12/2023 10:00" },
+      { status: "Armação em Trânsito (Ida)", date: "08/12/2023 14:30" },
+      { status: "Triagem / Conferência", date: "09/12/2023 09:15" },
     ],
   },
 ];

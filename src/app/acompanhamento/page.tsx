@@ -4,7 +4,7 @@
 import { Suspense, useEffect, useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { supabase } from '../../lib/supabase';
-import { Order } from '../../utils/types';
+import { Order, getNormalizedStatus } from '../../utils/types';
 import Timeline from '../../components/Timeline';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
@@ -46,8 +46,8 @@ function AcompanhamentoContent() {
           id: orderData.id,
           customerName: orderData.customer_name || orderData.customerName,
           cpf: orderData.cpf,
-          currentStatus: orderData.current_status || orderData.currentStatus,
-          history: orderData.history || [],
+          currentStatus: getNormalizedStatus(orderData.current_status || orderData.currentStatus || ''),
+          history: (orderData.history || []).map((h: any) => ({ ...h, status: getNormalizedStatus(h.status) })),
           glassesModel: orderData.glasses_model || orderData.glassesModel || 'Modelo Padrão',
           lensType: orderData.lens_type || orderData.lensType || 'Lente Padrão',
           createdAt: orderData.created_at || orderData.createdAt,
